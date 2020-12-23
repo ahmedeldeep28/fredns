@@ -1,0 +1,804 @@
+//start vareabel use the website
+$mainColor: #d1ab7f;
+$colorNest:#f2f2f2;
+$fontFamilyHeader: "Satisfy", cursive;
+$fontFamilyPr: "Poppins", Arial, sans-serif;
+$fontSizeHeader: 32px;
+$fontSizePr: 18px;
+//import files css
+// @import "./about.scss";
+// @import "./menu.scss";
+// @import "./offer.scss";
+// @import "./contact.scss";
+
+
+//start mixin helper
+@mixin background($url) {
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url($url);
+}
+@mixin transtion($speed) {
+  transition: all $speed linear;
+}
+@mixin border($color) {
+  border: 1px solid $color;
+}
+
+@mixin header(){
+  color: $mainColor;
+  font-size: $fontSizeHeader;
+  text-align: center;
+  font-family: $fontFamilyHeader;
+}
+@mixin section(){
+  width: 100%;
+  // overflow: hidden;
+  padding: 50px 0;
+}
+*{
+  box-sizing: border-box;
+  &::selection{
+    background: #111;
+    color: $mainColor;
+  }
+}
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+body.item-bar-active{
+  overflow: hidden;
+}
+.load {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 99999;
+}
+nav{
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  @include transtion(.2s);
+  .container{
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo{
+    width: 130px;
+    display: block;
+    a{
+      display: block;
+      font-size: $fontSizePr +10;
+      text-decoration: none;
+      height: 100%;
+      color: $mainColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    li{
+      a{
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: $fontSizePr + 3;
+        color: $colorNest;
+        text-transform: capitalize;
+        transition: all .5s linear;
+        &.active{
+          color: $mainColor;
+        }
+        &:hover{
+          color: $mainColor;
+          @include transtion(.3s)
+        }
+      }
+    }
+  }
+  .number{
+    color: $colorNest;
+    font-size: $fontSizePr + 2;
+    text-align: center;
+    padding: 13px 20px;
+    @include border($colorNest)
+  }
+}
+
+nav.active{
+  position: fixed;
+  background-color: #000;
+  height: 80px;
+}
+
+.item-bar{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 230px;
+  height: 100%;
+  z-index: 3000;
+  background: #222222;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: translateX(300px);
+  transition: all .5s linear;
+  .close{
+    padding: 15px 20px;
+    width: 100%;
+    text-align: right;
+    span{
+      font-size: $fontSizeHeader;
+      cursor: pointer;
+    }
+  }
+  .brand{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    span{
+      color: $mainColor;
+      font-size: $fontSizeHeader;
+    }
+  }
+  .item{
+    width: 100%;
+    height: 80%;
+
+    ul{
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      margin-top: 10px;
+      padding: 0;
+      li{
+        text-align: center;
+        a{
+          text-decoration: none;
+          padding: 22px 30px;
+          display: block;
+          font-size: $fontSizePr + 5;
+          color: $colorNest;
+          transition: all .5s linear;
+          &:hover{
+            color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+.item-bar.active{
+  transform: translateX(0);
+}
+header{
+  width: 100%;
+  height: 820px;
+  background: $mainColor;
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      cursor: grabbing;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      .over{
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        .caption{
+          h2{
+            font-size: $fontSizeHeader + 6;
+            color: $mainColor;
+            font-family: $fontFamilyHeader;
+            margin: 3px;
+            @media (max-width: 420px) {
+              font-size: $fontSizeHeader - 6;
+            }
+          }
+          p{
+            color: $colorNest;
+            font-size: $fontSizePr ;
+            font-family: $fontFamilyPr;
+            line-height: 1.6;
+            @media (max-width: 420px) {
+              font-size: $fontSizePr - 3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.about{
+  @include section();
+  .header{
+    text-align:center;
+    h2{
+      font-size: $fontSizeHeader;
+      font-family: $fontFamilyHeader;
+    }
+    p{
+      font-size: $fontSizePr;
+      font-family: $fontFamilyPr;
+      font-weight: 500;
+      @media (max-width: 420px) {
+        font-size: $fontSizePr - 3;
+      }
+    }
+  }
+  .item{
+    text-align: center;
+    // @include border($mainColor);
+    margin-top: 50px;
+    span{
+      background: #000;
+      color: $mainColor;
+      font-size: $fontSizeHeader + 20;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    h3{
+      font-size: $fontSizeHeader - 3;
+      margin: 5px;
+      color: $mainColor;
+      font-family: $fontFamilyHeader;
+    }
+    p{
+      font-size: $fontSizePr - 3;
+      margin: 5px;
+      font-weight: 600;
+      color: #666;
+      font-family: $fontFamilyPr;
+    }
+  }
+}
+
+.vewi{
+  width: 100%;
+  height: 550px ;
+  margin: 30px 0;
+  position: relative;
+  video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+  }
+  .over{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 55;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+.team{
+  @include section();
+  .header{
+    span{
+      font-size: $fontSizeHeader ;
+    }
+    h2{
+      font-size: $fontSizeHeader +20;
+      font-family: $fontFamilyHeader;
+      color: $mainColor;
+      margin: 0;
+      @media (max-width: 420px) {
+        font-size: $fontSizeHeader;
+      }
+    }
+  }
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .swiper-slide {
+      background: #fff;
+      text-align: center;
+      width: 380px;
+      overflow: hidden;
+      /* Center slide text vertically */
+      position: relative;
+      &:hover .info{
+        bottom: 0;
+      }
+      img{
+        width: 100%;
+        height: auto;
+      }
+      .info{
+        width: 100%;
+        height: 170px;
+        bottom: -300px;
+        position: absolute;
+        background: #f2f2f2d3;
+        @include transtion(.5s);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .conter{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .name{
+            font-size: $fontSizePr + 6;
+            margin: 5px;
+          }
+          .job{
+            font-size: $fontSizePr + 5;
+            margin: 0 0 20px 0;
+          }
+          ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            .material-icons{
+              color: $mainColor;
+              font-size: 35px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+.menu{
+  @include section();
+  .header{
+    span{
+      font-size: $fontSizeHeader ;
+    }
+    h2{
+      font-size: $fontSizeHeader +20;
+      font-family: $fontFamilyHeader;
+      color: $mainColor;
+      margin: 0;
+      @media (max-width: 420px) {
+        font-size: $fontSizeHeader;
+      }
+    }
+  }
+  .item{
+    position: relative;
+    margin-top: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include transtion(.3s);
+    @include border($mainColor);
+    border-radius: 5px;
+
+    &:hover{
+    box-shadow: 0 0 5px  #b6aca2d0;
+    }
+    .type{
+      position: absolute;
+      top: -70px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .content{
+      h3{
+        color: $mainColor;
+        font-size: $fontSizeHeader;
+        font-family: $fontFamilyHeader;
+        padding-top: 45px;
+      }
+      p{
+        font-size: $fontSizePr;
+        font-family: $fontFamilyPr;
+        font-weight: 600;
+        color: #666;
+        
+      }
+    }
+    .info{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      span{
+        padding: 0 15px;
+        color: $mainColor;
+        font-family: $fontFamilyPr;
+        font-size: $fontSizePr + 7;
+      }
+    }
+  }
+}
+.testimonial{
+  @include section();
+  .header{
+    span{
+      font-size: $fontSizeHeader ;
+    }
+    h2{
+      font-size: $fontSizeHeader +20;
+      font-family: $fontFamilyHeader;
+      color: $mainColor;
+      margin: 0;
+      @media (max-width: 420px) {
+        font-size: $fontSizeHeader;
+      }
+    }
+  }
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    padding: 80px 10px;
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      // width: 100% !important;
+      // height: 100% !important;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      border-radius: 0 20px 0 20px ;
+      position: relative;
+      .card{
+        min-height: 300px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 0 20px 0 20px !important;
+          @media (min-width:0) and (max-width:450px) {
+            width: 100%;
+          }
+        .text{
+          color: #f9f9f9;
+          width: 100%;
+          height: 100%;
+          padding: 40px 25px;
+          background-color: $mainColor;
+          font-size: $fontSizePr + 2;
+          text-align: center;
+          border-radius: 0 20px 0 20px !important;
+          // @media (min-width:0) and (max-width:450px) {
+          // font-size: $fontSizePr;
+          // padding: 25px 5px ;
+          // }
+          .icon{
+            font-size: 45px;
+          }
+        }
+        .info{
+          width: 80%;
+          height: 100px;
+          background-color: #dbba92;
+          position: absolute;
+          bottom: -50px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          border-radius: 0 20px 0 20px;
+          img{
+            width: 80px;
+            height: 80px;
+            margin: 0 8px;
+            border-radius: 50%;
+          }
+          .name{
+            font-size: $fontSizePr + 5;
+            font-family: $fontFamilyHeader;
+            color: $colorNest;
+          }
+        }
+      }
+    }
+  }
+}
+.offer{
+  @include section();
+  .header{
+    span{
+      font-size: $fontSizeHeader ;
+    }
+    h2{
+      font-size: $fontSizeHeader +20;
+      font-family: $fontFamilyHeader;
+      color: $mainColor;
+      margin: 0;
+      @media (max-width: 420px) {
+        font-size: $fontSizeHeader;
+      }
+    }
+  }
+  .item-offer{
+    @include border($mainColor);
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 8px  #b6aca2d0;
+    overflow: hidden;
+    .price{
+      width: 110px !important;
+      height: 110px !important;
+      position: absolute;
+      top: -200px;
+      left: -200px;
+      border-radius: 50%;
+      padding: 15px;
+      color: $colorNest;
+      font-size: $fontSizePr + 9;
+      background: $mainColor;
+      display: flex;
+      justify-content: center;
+      line-height: 110px;
+      transition: all .5s linear;
+    }
+    &:hover .price{
+      top: -20px;
+      left: -20px;
+    }
+    .offer-name{
+      font-size: $fontSizeHeader;
+      font-family: $fontFamilyHeader;
+      color: $mainColor;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      &::after{
+        position: absolute;
+        content: "";
+        width: 50%;
+        height: 2px;
+        background: $mainColor;
+        bottom: -11px;
+        left: 75px;
+      }
+      &::before{
+        position: absolute;
+        content: "";
+        width: 40%;
+        height: 2px;
+        background: $mainColor;
+        bottom: -18px;
+        left: 90px;
+      }
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      padding-top: 15px;
+
+      li{
+        margin-top: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .icon{
+          width: 35px;
+          height: 35px;
+          font-size: $fontSizePr + 4;
+          border-radius: 50%;
+          color: $mainColor;
+          background: #000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .text{
+          padding: 8px;
+          font-size: $fontSizePr - 2;
+          font-weight: 600;
+          color: #333;
+          font-family: $fontFamilyPr;
+        }
+        .numer{
+          padding: 5px;
+          font-size: $fontSizeHeader;
+        }
+      }
+    }
+    .btn{
+      width: 100%;
+      padding: 10px;
+      margin-top: 25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      button{
+        font-size: $fontSizePr + 2;
+        background: $mainColor;
+        outline: none;
+        color: $colorNest;
+        cursor: pointer;
+        border-radius: 5px;
+        @include border($mainColor);
+        transition: all .5s linear;
+        &:hover{
+          background: transparent;
+          color: $mainColor;
+          @include border($mainColor);
+        }
+      }
+    }
+  }
+}
+.contact{
+  @include section();
+  .header{
+    span{
+      font-size: $fontSizeHeader ;
+    }
+    h2{
+      font-size: $fontSizeHeader +20;
+      font-family: $fontFamilyHeader;
+      color: $mainColor;
+      margin: 0;
+      @media (max-width: 420px) {
+        font-size: $fontSizeHeader;
+      }
+    }
+  }
+    input{
+      font-size: $fontSizePr ;
+      outline: none;
+      @include border($mainColor);
+      border-radius: 5px;
+      
+  }
+  .masg{
+    textarea{
+      font-size: $fontSizePr;
+      outline: none;
+      resize: none;
+      height: 180px;
+      @include border($mainColor);
+      border-radius: 5px;
+      }
+  }
+  .btn{
+    button{
+      font-size: $fontSizePr + 5;
+      background: $mainColor;
+      cursor: pointer;
+      border-radius: 5px;
+      @include border($mainColor);
+      color: $colorNest;
+      transition: all .5s linear;
+      &:hover{
+        background: transparent ;
+        color: $mainColor;
+        @include border($mainColor); 
+      }
+    }
+  }
+}
+
+footer{
+  width: 100%;
+  min-height: 450px;
+  position: relative;
+  @include background("../img/lycs-architecture-baxEyU9FL7g-unsplash.jpg");
+  .over{
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    min-height: 450px;
+    position: relative;
+    @include section();
+    .all-link,
+    .socail,
+    .info{
+      h3{
+        font-size: $fontSizeHeader;
+        color: $mainColor;
+        font-family: $fontFamilyHeader;
+        margin: 3px;
+      }
+      ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+        li{
+          width: 100%;
+          padding-top: 4px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          a{
+            text-decoration: none;
+            color: $colorNest;
+            font-size: $fontSizePr + 3;
+            text-transform: capitalize;
+            transition: all .5s linear;
+            &:hover{
+              color: $mainColor;
+            }
+          }
+        }
+        .icon{
+          width: 35px;
+          height: 35px;
+          font-size: $fontSizePr + 4;
+          color: $mainColor;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .text{
+          padding: 5px;
+          font-size: $fontSizePr - 2;
+          font-weight: 600;
+          color: $colorNest;
+          font-family: $fontFamilyPr;
+        }
+      }
+    }
+  }
+}

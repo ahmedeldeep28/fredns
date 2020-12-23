@@ -1,0 +1,161 @@
+$mainColor: #d1ab7f;
+$colorNest: #f2f2f2;
+$fontFamilyHeader: "Satisfy", cursive;
+$fontFamilyPr: "Poppins", Arial, sans-serif;
+$fontSizeHeader: 32px;
+$fontSizePr: 18px;
+
+@mixin background($url) {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url($url);
+  }
+  @mixin transtion($speed) {
+    transition: all $speed linear;
+  }
+  @mixin border($color) {
+    border: 1px solid $color;
+  }
+  
+  @mixin header(){
+    color: $mainColor;
+    font-size: $fontSizeHeader;
+    text-align: center;
+    font-family: $fontFamilyHeader;
+  }
+  @mixin section(){
+    width: 100%;
+    // overflow: hidden;
+    padding: 50px 0;
+  }
+
+
+header {
+  .video {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .img {
+      width: 100%;
+      height: 100%;
+    }
+    .over {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      .caption {
+        text-align: center;
+        h2 {
+          font-size: $fontSizeHeader + 6;
+          color: $mainColor;
+          font-family: $fontFamilyHeader;
+          margin: 3px;
+          @media (max-width: 420px) {
+            font-size: $fontSizeHeader - 6;
+          }
+        }
+        p {
+          color: $colorNest;
+          font-size: $fontSizePr;
+          font-family: $fontFamilyPr;
+          line-height: 1.6;
+          @media (max-width: 420px) {
+            font-size: $fontSizePr - 3;
+          }
+        }
+      }
+    }
+  }
+}
+
+.info-team {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 50px;
+  .header {
+    h3 {
+      font-size: $fontSizeHeader + 7;
+      font-family: $fontFamilyHeader;
+      @media (max-width: 420px) {
+        font-size: $fontSizeHeader - 6;
+      }
+    }
+  }
+  .content {
+    p {
+      font-size: $fontSizePr - 2;
+      font-family: $fontFamilyPr;
+      font-weight: 600;
+      @media (max-width: 420px) {
+        font-size: $fontSizePr - 3;
+      }
+    }
+  }
+}
+
+.team {
+  .slide {
+    margin-top: 35px;
+    text-align: center;
+    overflow: hidden;
+    /* Center slide text vertically */
+    position: relative;
+    &:hover .info {
+      bottom: 0;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .info {
+      width: 100%;
+      height: 170px;
+      bottom: -300px;
+      position: absolute;
+      background: #f2f2f2d3;
+      @include transtion(0.5s);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .conter {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .name {
+          font-size: $fontSizePr + 6;
+          margin: 5px;
+        }
+        .job {
+          font-size: $fontSizePr + 5;
+          margin: 0 0 20px 0;
+        }
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          .material-icons {
+            color: $mainColor;
+            font-size: 35px;
+          }
+        }
+      }
+    }
+  }
+}

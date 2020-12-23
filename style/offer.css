@@ -1,0 +1,130 @@
+header .video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+header .video video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+
+header .video .img {
+  width: 100%;
+  height: 100%;
+}
+
+header .video .over {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .video .over .caption {
+  text-align: center;
+}
+
+header .video .over .caption h2 {
+  font-size: 38px;
+  color: #d1ab7f;
+  font-family: "Satisfy", cursive;
+  margin: 3px;
+}
+
+@media (max-width: 420px) {
+  header .video .over .caption h2 {
+    font-size: 26px;
+  }
+}
+
+header .video .over .caption p {
+  color: #f2f2f2;
+  font-size: 18px;
+  font-family: "Poppins", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+@media (max-width: 420px) {
+  header .video .over .caption p {
+    font-size: 15px;
+  }
+}
+
+.offer-info {
+  overflow: hidden;
+  margin-top: 100px;
+  min-height: 400px;
+}
+
+.offer-info .content img {
+  width: 100%;
+  height: 100%;
+}
+
+.offer-info .content h3 {
+  color: #d1ab7f;
+  font-size: 28px;
+  font-family: "Satisfy", cursive;
+}
+
+.offer-info .content p {
+  font-size: 15px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: bold;
+}
+
+.offer-info .content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 15px;
+}
+
+.offer-info .content ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offer-info .content ul li .icon {
+  width: 25px;
+  height: 25px;
+  font-size: 22px;
+  color: #d1ab7f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.offer-info .content ul li .text {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  font-family: "Poppins", Arial, sans-serif;
+}
+/*# sourceMappingURL=offer.css.map */

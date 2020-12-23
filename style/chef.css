@@ -1,0 +1,177 @@
+header .video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+header .video video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+
+header .video .img {
+  width: 100%;
+  height: 100%;
+}
+
+header .video .over {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .video .over .caption {
+  text-align: center;
+}
+
+header .video .over .caption h2 {
+  font-size: 38px;
+  color: #d1ab7f;
+  font-family: "Satisfy", cursive;
+  margin: 3px;
+}
+
+@media (max-width: 420px) {
+  header .video .over .caption h2 {
+    font-size: 26px;
+  }
+}
+
+header .video .over .caption p {
+  color: #f2f2f2;
+  font-size: 18px;
+  font-family: "Poppins", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+@media (max-width: 420px) {
+  header .video .over .caption p {
+    font-size: 15px;
+  }
+}
+
+.info-team {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.info-team .header h3 {
+  font-size: 39px;
+  font-family: "Satisfy", cursive;
+}
+
+@media (max-width: 420px) {
+  .info-team .header h3 {
+    font-size: 26px;
+  }
+}
+
+.info-team .content p {
+  font-size: 16px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 600;
+}
+
+@media (max-width: 420px) {
+  .info-team .content p {
+    font-size: 15px;
+  }
+}
+
+.team .slide {
+  margin-top: 35px;
+  text-align: center;
+  overflow: hidden;
+  /* Center slide text vertically */
+  position: relative;
+}
+
+.team .slide:hover .info {
+  bottom: 0;
+}
+
+.team .slide img {
+  width: 100%;
+  height: auto;
+}
+
+.team .slide .info {
+  width: 100%;
+  height: 170px;
+  bottom: -300px;
+  position: absolute;
+  background: #f2f2f2d3;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.team .slide .info .conter {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.team .slide .info .conter .name {
+  font-size: 24px;
+  margin: 5px;
+}
+
+.team .slide .info .conter .job {
+  font-size: 23px;
+  margin: 0 0 20px 0;
+}
+
+.team .slide .info .conter ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.team .slide .info .conter ul .material-icons {
+  color: #d1ab7f;
+  font-size: 35px;
+}
+/*# sourceMappingURL=chef.css.map */

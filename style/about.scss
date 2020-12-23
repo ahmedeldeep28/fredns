@@ -1,0 +1,215 @@
+$mainColor: #d1ab7f;
+$colorNest:#f2f2f2;
+$fontFamilyHeader: "Satisfy", cursive;
+$fontFamilyPr: "Poppins", Arial, sans-serif;
+$fontSizeHeader: 32px;
+$fontSizePr: 18px;
+
+header{
+        .video{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            video{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;  
+                pointer-events: none;
+            }
+            .over{
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                top: 0;
+                display: flex;
+                align-items: center;
+                .caption{
+                    text-align: center;
+                  h2{
+                    font-size: $fontSizeHeader + 6;
+                    color: $mainColor;
+                    font-family: $fontFamilyHeader;
+                    margin: 3px;
+                    @media (max-width: 420px) {
+                      font-size: $fontSizeHeader - 6;
+                    }
+                  }
+                  p{
+                    color: $colorNest;
+                    font-size: $fontSizePr ;
+                    font-family: $fontFamilyPr;
+                    line-height: 1.6;
+                    @media (max-width: 420px) {
+                      font-size: $fontSizePr - 3;
+                    }
+                  }
+                }
+            }
+        }
+    
+}
+
+.infromtion{
+  width: 100%;
+  min-height: 500px;
+  padding: 50px 0;
+  .header{
+    text-align:center;
+    h2{
+      font-size: $fontSizeHeader;
+      font-family: $fontFamilyHeader;
+      @media (max-width: 420px) {
+        font-size: $fontSizeHeader - 3;
+      }
+    }
+    p{
+      font-size: $fontSizePr;
+      font-family: $fontFamilyPr;
+      font-weight: 500;
+      @media (max-width: 420px) {
+        font-size: $fontSizePr - 3;
+      }
+    }
+  }
+
+  .img{
+    width: 100%;
+    height: 580px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .content{
+    width: 100%;
+    h3{
+      font-size: $fontSizeHeader;
+      font-family: $fontFamilyHeader;
+      margin: 3px;
+      @media (max-width: 420px) {
+        font-size: $fontSizeHeader - 6;
+      }
+    }
+    p{
+      font-size: $fontSizePr + 1;
+      font-family: $fontFamilyPr;
+      font-weight: 400;
+      color: #555;
+      @media (max-width: 420px) {
+        font-size: $fontSizePr ;
+      }
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      padding-top: 15px;
+
+      li{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .icon{
+          width: 35px;
+          height: 35px;
+          font-size: $fontSizePr + 4;
+          color: $mainColor;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .text{
+          padding: 5px;
+          font-size: $fontSizePr - 2;
+          font-weight: 600;
+          color: #333;
+          font-family: $fontFamilyPr;
+        }
+      }
+    }
+  }
+}
+
+.photo{
+  width: 100%;
+  min-height: 500px;
+  padding: 50px 0;
+  .show-photo{
+    width: 100%;
+    height: 820px;
+    background: rgb(22, 144, 148);
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    &.active{
+      display: flex;
+    }
+    .remove{
+      position: absolute;
+      top: 26px;
+      right: 25px;
+      cursor: pointer;
+    }
+    .photo{
+      width: 60%;
+      padding: 130px;
+      img{
+        width: 100%;
+      }
+    }
+    .control{
+      position: absolute;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      div{
+        font-size: $fontSizeHeader;
+        cursor: pointer;
+      }
+    }
+  }
+  .container{
+    .header{
+      span{
+        font-size: $fontSizeHeader ;
+      }
+      h2{
+        font-size: $fontSizeHeader +20;
+        font-family: $fontFamilyHeader;
+        color: $mainColor;
+        margin: 0;
+        @media (max-width: 420px) {
+          font-size: $fontSizeHeader;
+        }
+      }
+    }
+    .content{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+  }
+  .one{
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+  }
+  .item{
+    margin-top: 15px;
+    padding: 0 3px;
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+}

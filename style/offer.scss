@@ -1,0 +1,130 @@
+$mainColor: #d1ab7f;
+$colorNest: #f2f2f2;
+$fontFamilyHeader: "Satisfy", cursive;
+$fontFamilyPr: "Poppins", Arial, sans-serif;
+$fontSizeHeader: 32px;
+$fontSizePr: 18px;
+
+@mixin background($url) {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url($url);
+  }
+  @mixin transtion($speed) {
+    transition: all $speed linear;
+  }
+  @mixin border($color) {
+    border: 1px solid $color;
+  }
+  
+  @mixin header(){
+    color: $mainColor;
+    font-size: $fontSizeHeader;
+    text-align: center;
+    font-family: $fontFamilyHeader;
+  }
+  @mixin section(){
+    width: 100%;
+    // overflow: hidden;
+    padding: 50px 0;
+  }
+
+
+header {
+  .video {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .img {
+      width: 100%;
+      height: 100%;
+    }
+    .over {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      .caption {
+        text-align: center;
+        h2 {
+          font-size: $fontSizeHeader + 6;
+          color: $mainColor;
+          font-family: $fontFamilyHeader;
+          margin: 3px;
+          @media (max-width: 420px) {
+            font-size: $fontSizeHeader - 6;
+          }
+        }
+        p {
+          color: $colorNest;
+          font-size: $fontSizePr;
+          font-family: $fontFamilyPr;
+          line-height: 1.6;
+          @media (max-width: 420px) {
+            font-size: $fontSizePr - 3;
+          }
+        }
+      }
+    }
+  }
+}
+.offer-info {
+  overflow: hidden;
+  margin-top: 100px;
+  min-height: 400px;
+  .content{
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    h3{
+        color: $mainColor;
+        font-size: $fontSizeHeader - 4;
+        font-family: $fontFamilyHeader;
+    }
+    p{
+        font-size: $fontSizePr - 3;
+        font-family: $fontFamilyPr;
+        font-weight: bold;
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      padding-top: 15px;
+
+      li{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .icon{
+          width: 25px;
+          height: 25px;
+          font-size: $fontSizePr + 4;
+          color: $mainColor;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .text{
+          padding: 5px;
+          font-size: $fontSizePr - 2;
+          font-weight: 600;
+          color: #333;
+          font-family: $fontFamilyPr;
+        }
+      }
+    }
+  }
+}
